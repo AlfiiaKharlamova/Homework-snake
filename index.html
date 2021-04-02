@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!--
+
+Игра змейка
+
+-->
+    <meta charset="utf-8">
+    <title>Игра змейка</title>
+    <link rel=stylesheet id="style" type="text/css" href="./css/main-snake.css" />
+    <link rel="shortcut icon" href="css/images/favicon.png" />
+    <style>
+      .snake-toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:10000;
+        padding: 5px;
+      }
+    </style>
+
+</head>
+<body>
+    <div id="mode-wrapper" style="display: inline; width: auto;">
+    </div>
+
+    <div id="game-area" tabindex="0">
+    </div>
+    <script type="text/javascript" src="./js/snake.js"></script>
+    <script type="text/javascript" src="./js/init.js"></script>
+    <script type="text/javascript">
+      function go_full_screen() {
+        var elem = document.documentElement;
+        try {
+            if (elem.requestFullscreen) {
+              elem.requestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+              elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+              elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+              elem.webkitRequestFullscreen();
+            }
+        } catch(err) {
+          console.error(err);
+          alert("В этой настройке полноэкранный режим не работает.");
+        }
+      }
+  </script>
+</body>
+</html>
